@@ -95,6 +95,13 @@ $$
 
 因此为圆周运动，半径为 $V_0/|f|$。北半球中，运动轨迹向运动方向的右侧弯曲；在以东为 $x$、以北为 $y$ 的坐标平面中，轨迹为顺时针方向。南半球的弯曲方向相反。赤道上 $f=0$，在该理想化条件下质点沿初始方向作直线运动。
 
+
+### Derivation details / 推导补充
+
+**English.** Differentiate $du/dt=fv$ with respect to time. For constant latitude, $f$ is constant, so $d^2u/dt^2=f(dv/dt)=-f^2u$. Thus $u$ satisfies a simple harmonic oscillator equation. Its general solution is $u=A\sin ft+B\cos ft$. The initial condition $u(0)=0$ gives $B=0$, and $du/dt|_{t=0}=fV_0$ gives $Af=fV_0$, so $A=V_0$. Substituting into $dv/dt=-fu$ and applying $v(0)=V_0$ gives $v=V_0\cos ft$. Integrating the two velocity components gives the stated position equations. The circle equation follows by rearranging $x-V_0/f=-(V_0/f)\cos ft$ and $y=(V_0/f)\sin ft$, then using $\sin^2ft+\cos^2ft=1$.
+
+**中文。** 对 $du/dt=fv$ 再对时间求导。固定纬度下 $f$ 为常数，因此 $d^2u/dt^2=f(dv/dt)=-f^2u$，从而得到简谐振动方程。其通解为 $u=A\sin ft+B\cos ft$。由 $u(0)=0$ 得 $B=0$；又因为初始时 $du/dt=fV_0$，所以 $Af=fV_0$，即 $A=V_0$。再将 $u$ 代入 $dv/dt=-fu$，并利用 $v(0)=V_0$，得到 $v=V_0\cos ft$。分别对两个速度分量积分即可得到位置方程。将位置方程改写为 $x-V_0/f=-(V_0/f)\cos ft$ 和 $y=(V_0/f)\sin ft$，两式平方相加并利用 $\sin^2ft+\cos^2ft=1$，便可证明轨迹为圆。
+
 ---
 
 ## Problem 1.12 — Thickness of an isothermal 1000–500 hPa layer
@@ -167,6 +174,13 @@ $$
 
 两者厚度相差约 $5534-5068=466\ {\rm m}$。测高公式表明，气层厚度与平均绝对温度成正比，因此温度较高的等温层更厚。
 
+
+### Derivation details / 推导补充
+
+**English.** The hypsometric equation follows from hydrostatic balance, $dp/dz=-\rho g$, together with the ideal-gas law $\rho=p/(R_dT)$. Substituting gives $dz=-(R_dT/g)\,dp/p$. For an isothermal layer, $T$ is constant, so integration from the lower level $(p_1,Z_1)$ to the upper level $(p_2,Z_2)$ gives $Z_2-Z_1=(R_dT/g)\ln(p_1/p_2)$. Here $p_1/p_2=1000/500=2$, so the thickness is proportional to $T$. The difference can therefore also be calculated directly as $\Delta Z_{273}-\Delta Z_{250}=(R_d/g)(273-250)\ln2\approx466\ \mathrm{m}$.
+
+**中文。** 测高公式可由静力平衡方程 $dp/dz=-\rho g$ 和理想气体状态方程 $\rho=p/(R_dT)$ 推出。代入后有 $dz=-(R_dT/g)\,dp/p$。等温层中 $T$ 为常数，从下层气压 $p_1$ 积分到上层气压 $p_2$，得到 $Z_2-Z_1=(R_dT/g)\ln(p_1/p_2)$。本题 $p_1/p_2=1000/500=2$，因此厚度与绝对温度成正比。也可以直接计算两种温度下的厚度差：$\Delta Z_{273}-\Delta Z_{250}=(R_d/g)(273-250)\ln2\approx466\ \mathrm{m}$。
+
 ---
 
 ## Problem 1.13 — Temperature difference corresponding to a 60 m thickness contour interval
@@ -224,3 +238,10 @@ $$
 $$
 
 因此，在气压层为 1000–500 hPa 的前提下，60 m 的厚度等值线间隔约对应 $3\ {\rm K}$ 的层平均温度差。
+
+
+### Derivation details / 推导补充
+
+**English.** For fixed pressure levels, $R_d$, $g$, and $\ln(p_1/p_2)$ are constants. Differentiating the hypsometric equation with respect to the layer-mean temperature therefore gives $\delta(\Delta Z)=(R_d/g)\ln(p_1/p_2)\,\delta\overline T$. Rearranging isolates the temperature difference: $\delta\overline T=g\,\delta(\Delta Z)/[R_d\ln(p_1/p_2)]$. Substituting $\delta(\Delta Z)=60\ \mathrm{m}$ and $p_1/p_2=2$ gives approximately $2.96\ \mathrm{K}$. A temperature interval in kelvin has the same numerical size as a temperature interval in degrees Celsius.
+
+**中文。** 当上下气压层固定时，$R_d$、$g$ 和 $\ln(p_1/p_2)$ 都是常数。对测高公式按层平均温度求变化量，得到 $\delta(\Delta Z)=(R_d/g)\ln(p_1/p_2)\,\delta\overline T$。移项后可解出温度差：$\delta\overline T=g\,\delta(\Delta Z)/[R_d\ln(p_1/p_2)]$。代入 $\delta(\Delta Z)=60\ \mathrm{m}$ 以及 $p_1/p_2=2$，得到约 $2.96\ \mathrm{K}$。温差以开尔文或摄氏度表示时，数值相同。
