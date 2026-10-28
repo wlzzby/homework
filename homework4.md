@@ -140,6 +140,13 @@ $$
 
 风矢量指向西南，因此按气象风向定义，风来自东北，风向约为从正北顺时针 $034^\circ$。该结果依赖于题设的向东降温条件及热成风关系中的符号约定。
 
+
+### Derivation details / 推导补充
+
+**English.** First convert the temperature gradient to SI units: $-3^\circ\mathrm C/(100\ \mathrm{km})=-3.0\times10^{-5}\ \mathrm{K\,m^{-1}}$. Since the meridional gradient is zero, the thermal-wind equation gives $u_{500}-u_{750}=0$, so the eastward wind component does not change between the two levels. For the northward component, integrate with respect to $\ln p$: $v_{500}-v_{750}=-(R_d/f)(\partial\overline T/\partial x)\ln(500/750)$. The logarithm is negative because 500 hPa is less than 750 hPa; retaining this sign is essential. Resolve the southeasterly wind into components using the meteorological convention that wind direction describes where the wind comes from. A wind from the southeast points toward the northwest, so $u<0$ and $v>0$. Finally, calculate speed from the vector components and state wind direction separately from the direction toward which the vector points.
+
+**中文。** 首先将温度梯度换算为国际单位：$-3^\circ\mathrm C/(100\ \mathrm{km})=-3.0\times10^{-5}\ \mathrm{K\,m^{-1}}$。由于南北向温度梯度为零，热成风关系给出 $u_{500}-u_{750}=0$，即两层之间的东向风分量不变。对北向风分量，按 $\ln p$ 积分得到 $v_{500}-v_{750}=-(R_d/f)(\partial\overline T/\partial x)\ln(500/750)$。由于 500 hPa 小于 750 hPa，对数项为负，计算时必须保留其符号。再根据气象风向表示“风从哪里来”的约定，将东南风分解为分量：风从东南吹来，矢量指向西北，因此 $u<0$、$v>0$。最后由两个分量计算风速，并注意区分风矢量指向与气象风向。
+
 ---
 
 ## Problem 3.11 — Temperature advection by the layer-mean wind
@@ -211,6 +218,13 @@ $$
 $$
 
 结果为负，表示温度平流导致降温，即冷平流。该数值取决于题目给定的风分量和温度梯度。
+
+
+### Derivation details / 推导补充
+
+**English.** Temperature advection is defined as $-\mathbf V\cdot\nabla T$, not simply $\mathbf V\cdot\nabla T$. With the meridional gradient set to zero, only the zonal term remains: $-u(\partial T/\partial x)$. Insert $u=-14.14\ \mathrm{m\,s^{-1}}$ and $\partial T/\partial x=-3.0\times10^{-5}\ \mathrm{K\,m^{-1}}$. Their product in the advection expression is negative, giving $-4.24\times10^{-4}\ \mathrm{K\,s^{-1}}$. Multiplying by $3600\ \mathrm{s,h^{-1}}$ converts the tendency to about $-1.53\ \mathrm{K,h^{-1}}$. A negative temperature tendency due to advection is cold advection.
+
+**中文。** 温度平流定义为 $-\mathbf V\cdot\nabla T$，不能漏掉前面的负号。由于假设南北向温度梯度为零，只剩东西向项 $-u(\partial T/\partial x)$。代入 $u=-14.14\ \mathrm{m\,s^{-1}}$ 和 $\partial T/\partial x=-3.0\times10^{-5}\ \mathrm{K\,m^{-1}}$，可得平流率为负，即 $-4.24\times10^{-4}\ \mathrm{K\,s^{-1}}$。再乘以 $3600\ \mathrm{s,h^{-1}}$，换算为约 $-1.53\ \mathrm{K,h^{-1}}$。平流导致的温度变化率为负，表示冷平流。
 
 ---
 
@@ -379,3 +393,10 @@ t\approx\frac{22.0}{0.50}\approx44\ {\rm h}
 $$
 
 这一时间估算较为理想化。真实时间取决于风场和温度梯度的演变、垂直运动，以及题目对稳定度判据的具体定义。
+
+
+### Derivation details / 推导补充
+
+**English.** At $43^\circ\mathrm N$, calculate the Coriolis parameter from $f=2\Omega\sin\phi$. For each layer, use the difference between the wind components at the upper and lower pressure surfaces. The logarithmic pressure factor is $\ln(p_t/p_b)$, which is negative because pressure decreases with height. Solve the two thermal-wind equations separately for the meridional and zonal temperature gradients. To estimate advection, average the two boundary-level wind components to obtain the layer-mean wind, then evaluate $-\bar u\,\partial\overline T/\partial x-\bar v\,\partial\overline T/\partial y$. For the 900–700 hPa layer, both the mean wind components and both inferred gradients are nonzero, so both terms must be included. For the 700–500 hPa layer, the inferred zonal gradient is zero, and the mean meridional wind is also zero, so the estimated advection is approximately zero. The final time estimate divides a dry-adiabatic temperature difference by the estimated warm-advection rate; it is only an order-of-magnitude estimate because the flow and gradients would evolve.
+
+**中文。** 在 $43^\circ\mathrm N$ 处，先由 $f=2\Omega\sin\phi$ 计算科氏参数。对每一气层，分别求上下边界风分量之差。热成风关系中的对数项为 $\ln(p_t/p_b)$；由于气压随高度增加而降低，该项为负。将两个热成风方程分别整理，即可求出南北向和东西向温度梯度。估算温度平流时，先对气层上下边界的风分量取平均，再计算 $-\bar u\,\partial\overline T/\partial x-\bar v\,\partial\overline T/\partial y$。在 900–700 hPa 层中，平均风的两个分量和推得的两个温度梯度均不为零，因此必须同时计算两个平流项。在 700–500 hPa 层中，推得的东西向温度梯度为零，平均南北向风也为零，因此估算平流近似为零。最后用干绝热温差除以估算的暖平流率得到时间尺度；由于实际风场和温度梯度会随时间变化，这只能视为数量级估算。
