@@ -124,18 +124,15 @@ $$
 Using $R_d=287\ {\rm J\,kg^{-1}\,K^{-1}}$ and $g=9.81\ {\rm m\,s^{-2}}$:
 
 - For $T=273\ {\rm K}$,
-
-  $
+$$
   \Delta Z\approx\frac{287(273)}{9.81}\ln2
   \approx5534\ {\rm m}
-  $
+$$
 - For $T=250\ {\rm K}$,
-
-  $
+$$
   \Delta Z\approx\frac{287(250)}{9.81}\ln2
   \approx5068\ {\rm m}
-  $
-
+$$
 The difference is approximately $5534-5068=466\ {\rm m}$. The warmer isothermal layer is thicker because the hypsometric thickness is proportional to mean absolute temperature.
 
 ### 中文解答
@@ -156,18 +153,15 @@ $$
 取 $R_d=287\ {\rm J\,kg^{-1}\,K^{-1}}$、$g=9.81\ {\rm m\,s^{-2}}$：
 
 - 当 $T=273\ {\rm K}$ 时，
-
-  $
+$$
   \Delta Z\approx\frac{287(273)}{9.81}\ln2
   \approx5534\ {\rm m}
-  $
+$$
 - 当 $T=250\ {\rm K}$ 时，
-
-  $
+$$
   \Delta Z\approx\frac{287(250)}{9.81}\ln2
   \approx5068\ {\rm m}
-  $
-
+$$
 两者厚度相差约 $5534-5068=466\ {\rm m}$。测高公式表明，气层厚度与平均绝对温度成正比，因此温度较高的等温层更厚。
 
 
